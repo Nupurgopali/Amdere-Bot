@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="/static/favicon-32x32.png" type="image/gif" >
+<title>AMDERE BOT</title>
+</head>
+<body style="background-image:linear-gradient(to right, rgba(255,0,0,0), rgb(73, 206, 230));">
+<img src="/static/robot 1.png" style="width: 15%;height: 20%;float: left;  
+margin: 5px; margin-top:20rem;">
+<img src="/static/robot 3.png" style="width: 15%;height: 20%;float: right;margin: 5px; ">
+
+<h1 style=" margin-top:2rem;color:#8A140E;">AMDERE BOT</h1>
+<h3 style="color:#8A140E;">I am there...</h3>
+<div>
+<div id = "chatbox">
+<p class = "botText"><span>Hi!I am Amdere bot.....
+
+    When it hasn't been your day, your week, your month
+    Or even your year, but
+    I'll be there for you</span></p>
+</div>
+<div id = "userInput">
+<input id ="textInput" type ="text" name="msg" placeholder="Talk to me!">
+<input id = "buttonInput"  type = "submit" value="Send">
+</div>
+<script>
+function getBotResponse(){
+var rawText = $("#textInput").val();
+var userHtml = '<p class = "userText"><span>' + rawText + '</span></p>';
+$("#textInput").val("");
+$("#chatbox").append(userHtml);
+document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
+$.get("/get", {msg:rawText }).done(function(data) {
+var botHtml = '<p class ="botText"><span>' + data + '</span></p>';
+$("#chatbox").append(botHtml);
+document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
+});
+}
+$("#textInput").keypress(function(e) {
+if(e.which == 13) {
+getBotResponse();
+}
+});
+$("#buttonInput").click(function() {
+getBotResponse();
+})
+</script>
+</div>
+</body>
+</html>
