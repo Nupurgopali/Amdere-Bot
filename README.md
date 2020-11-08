@@ -1,2 +1,3 @@
 # Amdere-Bot
 Bot that helps people cope up with depression and anxiety.
+It brings positivity to a depressed person's life by giving him/her the assurance that he longs for. Often people have tried to reach out to their friends and family to overcome this disorder but they fear being judged and abstain from letting out their thoughts. This bot provides a way for the user to talk their mind out in a one to one session where there is no fear of judgment since the user remains completely anonymous and no data whatsoever about them is stored. It answers all the technical doubts related to depression and even suggests ways the user can control their anxiety. It even tries to cheer the user by sending messages of hope.
